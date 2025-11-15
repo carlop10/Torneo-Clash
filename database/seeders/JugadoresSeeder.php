@@ -21,7 +21,7 @@ class JugadoresSeeder extends Seeder
             'Cristian',
             'Zamith',
             'Keyn',
-            'Jugador_8'
+            'William'
         ];
 
         foreach ($jugadores as $nombre) {

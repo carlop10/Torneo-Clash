@@ -24,35 +24,31 @@
 
     <!-- Modal para código secreto -->
     <div x-show="mostrarModal"
-         x-transition:enter="transition ease-out duration-300"
-         x-transition:enter-start="opacity-0"
-         x-transition:enter-end="opacity-100"
-         x-transition:leave="transition ease-in duration-200"
-         x-transition:leave-start="opacity-100"
-         x-transition:leave-end="opacity-0"
-         class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-        <div class="card-clash rounded-2xl p-8 max-w-md mx-4">
-            <h2 class="text-2xl font-bold text-gray-900 mb-4">🔐 Código Admin</h2>
-            <p class="text-gray-700 mb-4">Ingresa el código secreto para registrar resultados:</p>
+     class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+    <div class="card-clash rounded-2xl p-6 w-full max-w-md mx-auto">
+        <h2 class="text-xl md:text-2xl font-bold text-gray-900 mb-4">🔐 Código Admin</h2>
+        <p class="text-gray-700 mb-4 text-sm md:text-base">
+            Ingresa el código secreto para registrar resultados:
+        </p>
 
-            <input type="password"
-                   x-model="codigo"
-                   @keyup.enter="verificarCodigo()"
-                   placeholder="Ingresa el código..."
-                   class="w-full px-4 py-3 border-2 border-amber-500 rounded-lg mb-4 focus:outline-none focus:border-amber-700">
+        <input type="password"
+               x-model="codigo"
+               @keyup.enter="verificarCodigo()"
+               placeholder="Ingresa el código..."
+               class="w-full px-4 py-3 border-2 border-amber-500 rounded-lg mb-4 focus:outline-none focus:border-amber-700 text-sm md:text-base">
 
-            <div class="flex space-x-4">
-                <button @click="verificarCodigo()"
-                        class="btn-royale flex-1 py-3 rounded-lg font-bold text-white">
-                    Verificar
-                </button>
-                <button @click="mostrarModal = false; codigo = ''"
-                        class="bg-gray-500 text-white flex-1 py-3 rounded-lg font-bold hover:bg-gray-600">
-                    Cancelar
-                </button>
-            </div>
+        <div class="flex space-x-3">
+            <button @click="verificarCodigo()"
+                    class="btn-royale flex-1 py-3 rounded-lg font-bold text-white text-sm md:text-base">
+                Verificar
+            </button>
+            <button @click="mostrarModal = false; codigo = ''"
+                    class="bg-gray-500 text-white flex-1 py-3 rounded-lg font-bold hover:bg-gray-600 text-sm md:text-base">
+                Cancelar
+            </button>
         </div>
     </div>
+</div>
 
     <!-- Indicador de modo admin -->
     <div x-show="esAdmin" class="text-center mb-6">
